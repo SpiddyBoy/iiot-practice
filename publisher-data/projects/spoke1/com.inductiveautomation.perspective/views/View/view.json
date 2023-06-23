@@ -1,0 +1,37 @@
+{
+  "custom": {},
+  "params": {},
+  "props": {},
+  "root": {
+    "children": [
+      {
+        "events": {
+          "dom": {
+            "onClick": {
+              "config": {
+                "script": "\tbaseTagPath \u003d \"[default]Examples\"\n\t\n\ttagName \u003d \"udtONE\"\n\ttypeId \u003d \"UDT1\"\n\ttagType \u003d \"UdtInstance\"\n\t\n\ttag \u003d {\n\t\t\"name\": tagName,\n\t\t\"typeId\": typeId,\n\t\t\"tagType\" : tagType\n\t\t}\n\t\n\tcollisionPolicy \u003d \"a\"\n\t\n\tsystem.tag.configure(baseTagPath, [tag], collisionPolicy)"
+              },
+              "scope": "G",
+              "type": "script"
+            }
+          }
+        },
+        "meta": {
+          "name": "Button"
+        },
+        "position": {
+          "basis": "140px"
+        },
+        "type": "ia.input.button"
+      }
+    ],
+    "meta": {
+      "name": "root"
+    },
+    "props": {
+      "alignItems": "center",
+      "justify": "space-evenly"
+    },
+    "type": "ia.container.flex"
+  }
+}

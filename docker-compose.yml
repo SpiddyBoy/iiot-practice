@@ -1,0 +1,93 @@
+services:
+  subscriber:
+    image: bwdesigngroup/ignition-docker-iiot
+    hostname: subscriber
+    ports:
+      - 8088
+    volumes:
+      - ./subscriber-data:/workdir
+      - ./backups:/backups
+    environment:
+      - SYMLINK_GITIGNORE=false
+      - SYMLINK_LOGBACK=false
+      - IIOT_MODULES_ENABLED=mqtt-engine
+    command: >
+        -r /backups/subscriber.gwbk
+        -a subscriber.localtest.me
+        -h 8088
+        -s 8043
+
+  broker:
+    image: bwdesigngroup/ignition-docker-iiot
+    hostname: broker
+    ports:
+      - 8088
+      - 1883:1883
+    volumes:
+        - ./backups:/backups
+    environment:
+      - SYMLINK_GITIGNORE=false
+      - SYMLINK_LOGBACK=false
+      - IIOT_MODULES_ENABLED=mqtt-distributor
+    command: >
+        -r /backups/broker.gwbk
+        -a broker.localtest.me
+        -h 8088
+        -s 8043
+
+  publisher1:
+    image: bwdesigngroup/ignition-docker-iiot
+    hostname: publisher1
+    ports:
+      - 8088
+    volumes:
+      - ./publisher-data:/workdir
+      - ./backups:/backups
+    environment:
+      - SYMLINK_GITIGNORE=false
+      - SYMLINK_LOGBACK=false
+      - SYMLINK_THEMES=false
+      - IIOT_MODULES_ENABLED=mqtt-transmission
+    command: >
+        -r /backups/publisher.gwbk
+        -a publisher1.localtest.me
+        -h 8088
+        -s 8043
+
+  publisher2:
+    image: bwdesigngroup/ignition-docker-iiot
+    hostname: publisher2
+    ports:
+      - 8088
+    volumes:
+      - ./publisher-data2:/workdir
+      - ./backups:/backups
+    environment:
+      - SYMLINK_GITIGNORE=false
+      - SYMLINK_LOGBACK=false
+      - SYMLINK_THEMES=false
+      - IIOT_MODULES_ENABLED=mqtt-transmission
+    command: >
+        -r /backups/publisher.gwbk
+        -a publisher2.localtest.me
+        -h 8088
+        -s 8043
+
+  publisher3:
+    image: bwdesigngroup/ignition-docker-iiot
+    hostname: publisher3
+    ports:
+      - 8088
+    volumes:
+      - ./publisher-data3:/workdir
+      - ./backups:/backups
+    environment:
+      - SYMLINK_GITIGNORE=false
+      - SYMLINK_LOGBACK=false
+      - SYMLINK_THEMES=false
+      - IIOT_MODULES_ENABLED=mqtt-transmission
+    command: >
+        -r /backups/publisher.gwbk
+        -a publisher3.localtest.me
+        -h 8088
+        -s 8043

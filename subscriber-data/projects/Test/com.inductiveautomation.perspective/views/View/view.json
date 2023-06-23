@@ -1,0 +1,36 @@
+{
+  "custom": {},
+  "params": {},
+  "props": {},
+  "root": {
+    "children": [
+      {
+        "events": {
+          "dom": {
+            "onClick": {
+              "config": {
+                "script": "\t\n\tsystem.perspective.print(\"message sent!\")\n\t\n\tPL \u003d {\n\t\t\u0027whichUDT\u0027 : \"one\"\n\t}\n\t\n\tsystem.perspective.print(system.util.sendMessage(\"MQTT\",\"message\", PL,\"CGS\", remoteServers\u003d[\"publisher\"]))"
+              },
+              "scope": "G",
+              "type": "script"
+            }
+          }
+        },
+        "meta": {
+          "name": "Button"
+        },
+        "position": {
+          "height": 34,
+          "width": 80,
+          "x": 253,
+          "y": 419
+        },
+        "type": "ia.input.button"
+      }
+    ],
+    "meta": {
+      "name": "root"
+    },
+    "type": "ia.container.coord"
+  }
+}
