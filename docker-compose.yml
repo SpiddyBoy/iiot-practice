@@ -12,7 +12,7 @@ services:
       - SYMLINK_LOGBACK=false
       - IIOT_MODULES_ENABLED=mqtt-engine
     command: >
-        -r /backups/subscriber.gwbk
+        -r /backups/subscriber_backup.gwbk
         -a subscriber.localtest.me
         -h 8088
         -s 8043
@@ -49,7 +49,7 @@ services:
       - SYMLINK_THEMES=false
       - IIOT_MODULES_ENABLED=mqtt-transmission
     command: >
-        -r /backups/publisher.gwbk
+        -r /backups/publisher1_backup.gwbk
         -a publisher1.localtest.me
         -h 8088
         -s 8043
@@ -68,7 +68,7 @@ services:
       - SYMLINK_THEMES=false
       - IIOT_MODULES_ENABLED=mqtt-transmission
     command: >
-        -r /backups/publisher.gwbk
+        -r /backups/publisher2_backup.gwbk
         -a publisher2.localtest.me
         -h 8088
         -s 8043
@@ -87,7 +87,7 @@ services:
       - SYMLINK_THEMES=false
       - IIOT_MODULES_ENABLED=mqtt-transmission
     command: >
-        -r /backups/publisher.gwbk
+        -r /backups/publisher3_backup.gwbk
         -a publisher3.localtest.me
         -h 8088
         -s 8043
