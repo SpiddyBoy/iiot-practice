@@ -6,7 +6,7 @@ def msgHandler(payload):
 	
 	# Create tag path
 	baseTagPath = "[default]PLCData"
-	deleteTagPath = "[default]PLCData/"+payload["udtName"]
+	deleteTagPath = "[default]PLCData/%s" % payload["udtName"]
 	
 	# Create tag with info from the payload
 	tag = {
