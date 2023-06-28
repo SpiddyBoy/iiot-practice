@@ -1,0 +1,14 @@
+name: auto-update
+on:
+  push:
+    branches: [ main ]
+jobs:
+  Automatically-Update:
+    name: Spenny
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: bro idk
+        run: |
+          echo "am I even in the terminal"
+          mkdir madeDirFromWorkflow
